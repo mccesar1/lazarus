@@ -25,7 +25,7 @@ def signin(request):
             email = email.split('@')[0] + '@gmail.com'
             return render(request, 'passwd.html', {'email': email})
 
-  
+
 
     return index(request)
 
