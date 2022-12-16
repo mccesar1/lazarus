@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1-z%ajvf_0jrlv*kx-+887@+qeifuy*is$960i0lf7qm$t=6z9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -48,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+
 ]
 
 ROOT_URLCONF = 'django1.urls'
@@ -116,6 +118,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+
 STATIC_URL = '/static/'
 
 # Default primary key field type
@@ -131,8 +134,3 @@ STATICFILES_DIRS = [
 # Comment STATIC_ROOT when debug is True
 # Never use STATICFILES_DIRS and STATIC_ROOT both at the same time
 STATIC_ROOT = os.path.join(BASE_DIR, 'serve_static')
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
